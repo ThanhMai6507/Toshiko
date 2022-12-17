@@ -79,28 +79,5 @@ function getRoundedCanvas(sourceCanvas) {
 }
 
 function download() {
-	var linkSource = $("#cropped_image_result img").attr("src");
-	var fileName = "download.png";
-	const downloadLink = document.createElement("a");
-	downloadLink.href = linkSource;
-	downloadLink.download = fileName;
-	downloadLink.click();
-}
-
-function upload() {
-	var base64data = $("#cropped_image_result img").attr("src");
-	//alert(base64data);
-	$.ajax({
-		type: "POST",
-		dataType: "json",
-		url: "crop_image_upload.php",
-		data: { image: base64data },
-		success: function (response) {
-			if (response.status == true) {
-				alert(response.msg);
-			} else {
-				alert("Image not uploaded.");
-			}
-		},
-	});
+	
 }
