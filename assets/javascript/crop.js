@@ -1,11 +1,10 @@
 $("body").on("change", ".upload_image_data", function (e) {
-	$(".modal_image").css("display", "block");
-
 	var files = e.target.files;
+	$(".modal_image").css("display", "block");
 	var done = function (url) {
 		$(".modal_image_content").html("");
 		$(".modal_image_content").html(
-			'<img name="modal_image_data" id="modal_image_data" src="' +
+			'<img name="modal_image_data" class="modal_image_data" src="' +
 				url +
 				'" alt="Uploaded Picture">',
 		);
@@ -24,9 +23,10 @@ $("body").on("change", ".upload_image_data", function (e) {
 		}
 	}
 
-	var image = document.getElementById("display_image_data");
-	var button = document.getElementById("crop_button");
-	var result = document.getElementById("cropped_image_result");
+	var image = document.querySelector(".modal_image_data");
+	var modal_image = document.querySelector(".modal_image");
+	var button = document.querySelector(".modal_image_upload");
+	var result = document.querySelector(".display_image_result");
 	var croppable = false;
 	var cropper = new Cropper(image, {
 		aspectRatio: 1,
@@ -37,6 +37,7 @@ $("body").on("change", ".upload_image_data", function (e) {
 	});
 
 	button.onclick = function () {
+		modal_image.style.display = "none";
 		var croppedCanvas;
 		var roundedCanvas;
 		var roundedImage;
@@ -56,6 +57,7 @@ $("body").on("change", ".upload_image_data", function (e) {
 		roundedImage.src = roundedCanvas.toDataURL();
 		result.innerHTML = "";
 		result.appendChild(roundedImage);
+		roundedImage.className = "display_image_data";
 	};
 });
 
