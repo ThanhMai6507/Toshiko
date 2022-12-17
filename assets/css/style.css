@@ -4,28 +4,22 @@
 }
 .display_image {
 	position: static;
+	/* flex: 1; */
 }
-.display_image_avatar{
+.display_image_avatar {
 	position: relative;
-	max-width: 500px;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 .display_image_frame {
-	position: absolute;
-	top: 0;
-	left: 0;
 	
 }
 .display_image_result {
-	width: 35%;
-	transform: translateY(100%);
-	
+	position: absolute;
+	top: calc(25% + 7px);
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - 197px*2);
 }
 .display_image_data {
-
 }
 .modal_image {
 	position: absolute;
@@ -43,7 +37,7 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-    /* background-color: transparent; */
+	/* background-color: transparent; */
 	background-color: red;
 }
 /* .cropper-bg {

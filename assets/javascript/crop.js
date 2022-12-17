@@ -25,7 +25,7 @@ $("body").on("change", ".upload_image_data", function (e) {
 
 	var image = document.querySelector(".modal_image_data");
 	var modal_image = document.querySelector(".modal_image");
-	var button = document.querySelector(".modal_image_upload");
+	var upload_button = document.querySelector(".modal_image_upload");
 	var result = document.querySelector(".display_image_result");
 	var croppable = false;
 	var cropper = new Cropper(image, {
@@ -36,7 +36,7 @@ $("body").on("change", ".upload_image_data", function (e) {
 		},
 	});
 
-	button.onclick = function () {
+	upload_button.onclick = function () {
 		modal_image.style.display = "none";
 		var croppedCanvas;
 		var roundedCanvas;
@@ -79,5 +79,22 @@ function getRoundedCanvas(sourceCanvas) {
 }
 
 function download() {
-	
+	var container = document.querySelector(".display_image_avatar"); /* full page */
+	// var linkSource = $(".display_image_data").attr("src");
+	// console.log(linkSource);
+	// var fileName = "download.png";
+	// const downloadLink = document.createElement("a");
+	// downloadLink.href = linkSource;
+	// downloadLink.download = fileName;
+	// downloadLink.click();
+	html2canvas(container).then(function (canvas) {
+		var link = document.createElement("a");
+		document.body.appendChild(link);
+		link.download = "download.jpg";
+		link.href = canvas.toDataURL();
+		link.target = "_blank";
+		link.click();
+	});
 }
+const download_button = document.querySelector(".download_button");
+download_button.addEventListener("click", download);
