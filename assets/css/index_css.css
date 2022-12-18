@@ -81,6 +81,6 @@ h1 {
 }
 
 .btn:hover {
-	background: rebeccapurple;
-	box-shadow: 0 3px 0 0 deeppink;
+	background: rgb(248, 118, 211);
+	box-shadow: 0 3px 0 0 rgb(249, 93, 176);
 }
