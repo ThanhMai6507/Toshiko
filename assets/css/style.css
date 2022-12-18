@@ -1,26 +1,33 @@
 .container {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
+
 .display_image {
 	position: static;
+	width: 60%;
 	/* flex: 1; */
 }
+
 .display_image_avatar {
 	position: relative;
+
 }
-.display_image_frame {
-	
-}
+
+.display_image_frame {}
+
 .display_image_result {
 	position: absolute;
 	top: calc(25% + 7px);
 	left: 50%;
 	transform: translateX(-50%);
-	width: calc(100% - 197px*2);
+	width: 37%;
 }
-.display_image_data {
-}
+
+.display_image_data {}
+
 .modal_image {
 	position: absolute;
 	top: 0;
@@ -30,6 +37,7 @@
 	background-color: #ccc;
 	display: none;
 }
+
 .modal_image_content {
 	width: 800px;
 	height: 400px;
@@ -40,6 +48,7 @@
 	/* background-color: transparent; */
 	background-color: red;
 }
+
 /* .cropper-bg {
     background-image: none;
 }

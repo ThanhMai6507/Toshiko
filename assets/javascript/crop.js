@@ -5,8 +5,8 @@ $("body").on("change", ".upload_image_data", function (e) {
 		$(".modal_image_content").html("");
 		$(".modal_image_content").html(
 			'<img name="modal_image_data" class="modal_image_data" src="' +
-				url +
-				'" alt="Uploaded Picture">',
+			url +
+			'" alt="Uploaded Picture">',
 		);
 	};
 	if (files && files.length > 0) {
@@ -31,6 +31,7 @@ $("body").on("change", ".upload_image_data", function (e) {
 	var cropper = new Cropper(image, {
 		aspectRatio: 1,
 		viewMode: 1,
+		responsive: true,
 		ready: function () {
 			croppable = true;
 		},
@@ -89,7 +90,13 @@ function download() {
 	// downloadLink.click();
 	html2canvas(container).then(function (canvas) {
 		var link = document.createElement("a");
+
 		document.body.appendChild(link);
+		// var img = new Image();
+		// img.src = canvas.toDataURL("image/png");
+		// img.width = 1534;
+		// img.height = 2048;
+		// document.getElementsByClassName('display_image_avatar')[0].appendChild(img);
 		link.download = "download.jpg";
 		link.href = canvas.toDataURL();
 		link.target = "_blank";
