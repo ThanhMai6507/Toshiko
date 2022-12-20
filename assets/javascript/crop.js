@@ -5,8 +5,8 @@ $("body").on("change", ".upload_image_data", function (e) {
 		$(".modal_image_content").html("");
 		$(".modal_image_content").html(
 			'<img name="modal_image_data" class="modal_image_data" src="' +
-				url +
-				'" alt="Uploaded Picture">',
+			url +
+			'" alt="Uploaded Picture">',
 		);
 	};
 	if (files && files.length > 0) {
@@ -25,18 +25,19 @@ $("body").on("change", ".upload_image_data", function (e) {
 
 	var image = document.querySelector(".modal_image_data");
 	var modal_image = document.querySelector(".modal_image");
-	var button = document.querySelector(".modal_image_upload");
+	var upload_button = document.querySelector(".modal_image_upload");
 	var result = document.querySelector(".display_image_result");
 	var croppable = false;
 	var cropper = new Cropper(image, {
 		aspectRatio: 1,
 		viewMode: 1,
+		responsive: true,
 		ready: function () {
 			croppable = true;
 		},
 	});
 
-	button.onclick = function () {
+	upload_button.onclick = function () {
 		modal_image.style.display = "none";
 		var croppedCanvas;
 		var roundedCanvas;
@@ -79,28 +80,28 @@ function getRoundedCanvas(sourceCanvas) {
 }
 
 function download() {
-	var linkSource = $("#cropped_image_result img").attr("src");
-	var fileName = "download.png";
-	const downloadLink = document.createElement("a");
-	downloadLink.href = linkSource;
-	downloadLink.download = fileName;
-	downloadLink.click();
-}
+	var container = document.querySelector(".display_image_avatar"); /* full page */
+	// var linkSource = $(".display_image_data").attr("src");
+	// console.log(linkSource);
+	// var fileName = "download.png";
+	// const downloadLink = document.createElement("a");
+	// downloadLink.href = linkSource;
+	// downloadLink.download = fileName;
+	// downloadLink.click();
+	html2canvas(container).then(function (canvas) {
+		var link = document.createElement("a");
 
-function upload() {
-	var base64data = $("#cropped_image_result img").attr("src");
-	//alert(base64data);
-	$.ajax({
-		type: "POST",
-		dataType: "json",
-		url: "crop_image_upload.php",
-		data: { image: base64data },
-		success: function (response) {
-			if (response.status == true) {
-				alert(response.msg);
-			} else {
-				alert("Image not uploaded.");
-			}
-		},
+		document.body.appendChild(link);
+		// var img = new Image();
+		// img.src = canvas.toDataURL("image/png");
+		// img.width = 1534;
+		// img.height = 2048;
+		// document.getElementsByClassName('display_image_avatar')[0].appendChild(img);
+		link.download = "download.jpg";
+		link.href = canvas.toDataURL();
+		link.target = "_blank";
+		link.click();
 	});
 }
+const download_button = document.querySelector(".download_button");
+download_button.addEventListener("click", download);

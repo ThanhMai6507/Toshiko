@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- <link
 			rel="stylesheet"
 			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"
-		/>
-		<link rel="stylesheet" href="assets/css/base.css" />
-		<link rel="stylesheet" href="assets/css/style.css" />
-		<title>Toshiko</title>
-	</head>
-	<body>
-		<div id="app">
-			<div class="container">
-				<div class="display_image">
-					<div class="display_image_avatar">
-						<img
-							src="assets/image/Frame/frame1.png"
-							alt="Frame"
-							class="display_image_frame"
-						/>
-						<div class="display_image_result">
-							<img src="" alt="Avatar" class="display_image_data" />
-						</div>
-					</div>
-				</div>
-				<div class="modal_image">
-					<div class="modal_image_content"></div>
-					<button class="modal_image_upload">Upload</button>
-				</div>
-				<div class="control_image">
-					<div class="upload_image">
-						<input type="file" name="upload_image_data" class="upload_image_data" />
-						<!-- <input type="file" name="upload_image_frame" class="upload_image_frame" /> -->
-					</div>
-					<div class="download_image">
-						<button class="download_button">Download</button>
+		/> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
+	<link rel="stylesheet" href="assets/css/base.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
+
+	<title>Toshiko</title>
+</head>
+
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="display_image">
+				<div class="display_image_avatar">
+					<img src="assets/image/frame1.png" alt="Frame" class="display_image_frame" width="1200" />
+					<div class="display_image_result">
+						<!-- <img hidden src="" alt="Avatar" class="display_image_data" /> -->
 					</div>
 				</div>
 			</div>
+
+			<div class="modal_image">
+				<div class="modal_image_content"></div>
+				<button class="modal_image_upload">Upload</button>
+			</div>
+			<div class="control_image">
+				<div class="upload_image">
+					<input type="file" name="upload_image_data" class="upload_image_data" />
+					<!-- <input type="file" name="upload_image_frame" class="upload_image_frame" /> -->
+				</div>
+				<button class="download_button">Download</button>
+				<div class="download_image"></div>
+			</div>
 		</div>
-		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script> -->
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"
-			integrity="sha512-6lplKUSl86rUVprDIjiW8DuOniNX8UDoRATqZSds/7t6zCQZfaCe3e5zcGaQwxa8Kpn5RTM9Fvl3X2lLV4grPQ=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		></script>
-		<script src="assets/javascript/crop.js"></script>
-	</body>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"
+		integrity="sha512-6lplKUSl86rUVprDIjiW8DuOniNX8UDoRATqZSds/7t6zCQZfaCe3e5zcGaQwxa8Kpn5RTM9Fvl3X2lLV4grPQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+	<script type="text/javascript" src="./assets/javascript/crop.js"></script>
+</body>
+
 </html>
