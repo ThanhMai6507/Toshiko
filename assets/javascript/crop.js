@@ -1,3 +1,9 @@
+const recentImageDataUrl = localStorage.getItem("recent-image");
+const frame = document.querySelector(".display_image_frame")
+if (recentImageDataUrl) {
+	frame.src = recentImageDataUrl;
+}
+
 $("body").on("change", ".upload_image_data", function (e) {
 	var files = e.target.files;
 	$(".modal_image").css("display", "block");
@@ -5,8 +11,8 @@ $("body").on("change", ".upload_image_data", function (e) {
 		$(".modal_image_content").html("");
 		$(".modal_image_content").html(
 			'<img name="modal_image_data" class="modal_image_data" src="' +
-			url +
-			'" alt="Uploaded Picture">',
+				url +
+				'" alt="Uploaded Picture">',
 		);
 	};
 	if (files && files.length > 0) {
@@ -81,22 +87,10 @@ function getRoundedCanvas(sourceCanvas) {
 
 function download() {
 	var container = document.querySelector(".display_image_avatar"); /* full page */
-	// var linkSource = $(".display_image_data").attr("src");
-	// console.log(linkSource);
-	// var fileName = "download.png";
-	// const downloadLink = document.createElement("a");
-	// downloadLink.href = linkSource;
-	// downloadLink.download = fileName;
-	// downloadLink.click();
 	html2canvas(container).then(function (canvas) {
 		var link = document.createElement("a");
 
 		document.body.appendChild(link);
-		// var img = new Image();
-		// img.src = canvas.toDataURL("image/png");
-		// img.width = 1534;
-		// img.height = 2048;
-		// document.getElementsByClassName('display_image_avatar')[0].appendChild(img);
 		link.download = "download.jpg";
 		link.href = canvas.toDataURL();
 		link.target = "_blank";
