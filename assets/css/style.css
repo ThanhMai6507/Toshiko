@@ -1,26 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@700&display=swap');
+
 .container {
 	display: flex;
 	justify-content: center;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 }
 
 .display_image {
 	position: static;
 	width: 60%;
+	margin-right: 32px;
+
 	/* flex: 1; */
 }
 
 .display_image_avatar {
 	position: relative;
 
+
+}
+
+.display_image_avatar .guest_name {
+	text-transform: uppercase;
+	color: #fcf542;
+	font-size: 32px;
+	text-shadow: #fad126;
+	font-family: 'Montserrat', sans-serif;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .display_image_frame {}
 
 .display_image_result {
 	position: absolute;
-	top: calc(25% + 7px);
+	top: calc(25%);
 	left: 50%;
 	transform: translateX(-50%);
 	width: 37%;
@@ -47,6 +64,23 @@
 	transform: translate(-50%, -50%);
 	/* background-color: transparent; */
 	background-color: red;
+}
+
+.control_image {}
+
+.control_image .add-name {
+	margin-bottom: 32px;
+
+}
+
+.add-name label {
+	font-size: 24px;
+}
+
+.add-name .add-name-input {
+	line-height: 24px;
+	padding: 8px;
+	font-size: 24px;
 }
 
 /* .cropper-bg {
