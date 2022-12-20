@@ -95,6 +95,7 @@ function download() {
 		link.href = canvas.toDataURL();
 		link.target = "_blank";
 		link.click();
+		document.querySelector('a').remove();
 	});
 }
 const download_button = document.querySelector(".download_button");
