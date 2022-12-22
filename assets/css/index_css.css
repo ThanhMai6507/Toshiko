@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.container {
+	display: flex;
+	margin: 20px;
+	justify-content: space-around;
+}
+
+.frame {
+	position: relative;
+	/* margin: 20px auto; */
+	width: 40%;
+	height: 650px;
+	border-radius: 10px;
+	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	background: rgb(248, 223, 232);
+	color: #333;
+	font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60%;
+	height: 80%;
+	border-radius: 10px;
+	box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
+}
+
+.title {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0;
+}
+
+h1 {
+	font-size: 16px;
+	font-weight: 300;
+	color: #666;
+}
+
+.dropzone {
+	width: 94%;
+	height: 100%;
+	border: 4px dashed pink;
+	border-radius: 10px;
+	text-align: center;
+	/* margin-bottom: 40px; */
+	position: relative;
+}
+.upload {
+	width: 100%;
+	height: 100%;
+}
+.upload-icon {
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+}
+.upload_result {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+
+}
+
+.upload-input {
+	cursor: pointer;
+	top: -58%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+.upload_image {
+	text-decoration: none;
+}
+.upload_link {
+	text-decoration: none;
+	/* margin-top: 80px; */
+	width: 140px;
+	height: 40px;
+}
+.btn {
+	/* display: block; */
+	width: 100%;
+	height: 100%;
+	background: rgb(246, 167, 180);
+	color: #fff;
+	border-radius: 3px;
+	border: 0;
+	box-shadow: 0px 3px 3px 0 rgb(197, 131, 164);
+	transition: all 0.3s ease-in-out;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background: rgb(232, 133, 156);
+	box-shadow: 0 3px 0 0 rgb(245, 144, 198);
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-left: -10%;
+    margin-top: 20%;
+}
+
+.cancel {
+	background: rgb(147, 223, 170);
+	color: #fff;
+	border-radius: 3px;
+	border: 0;
+	box-shadow: 0px 3px 3px 0 rgb(134, 189, 158);
+	transition: all 0.3s ease-in-out;
+	font-size: 14px;
+	cursor: pointer;
+	margin-left: -50%;
+}
+
+.cancel:hover {
+	background: rgb(152, 206, 168);
+	box-shadow: 0 3px 0 0 rgb(79, 150, 101);
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/css/index_css.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="frame">
+				<div class="center">
+					<h1 class="title">Drop file to upload</h1>
+
+					<div class="dropzone">
+						<div class="upload">
+							<img
+								src="http://100dayscss.com/codepen/upload.svg"
+								class="upload-icon"
+							/>
+							<input type="file" class="upload-input" />
+						</div>
+						<img hidden src="" alt="" class="upload_result" width="100" />
+					</div>
+				</div>
+			</div>
+			<div class="action">
+				<a class="upload_link" href="./upload_image.html">
+					<button type="button" class="btn" name="uploadbutton">Upload file</button>
+				</a>
+				<button type="button" class="cancel upload_link" name="uploadbutton">Cancel</button>
+			</div>
+		</div>
+		<script src="./assets/javascript/upload.js"></script>
+	</body>
+</html>
