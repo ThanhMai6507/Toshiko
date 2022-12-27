@@ -30,7 +30,10 @@
 						<div class="display_image_result">
 							<!-- <img hidden src="" alt="Avatar" class="display_image_data" /> -->
 						</div>
-						<span class="guest_name"> </span>
+						<div class="display_image_name">
+							<input type="text" class="guest_name input_name" id="name" />
+							
+						</div>
 					</div>
 				</div>
 
@@ -39,14 +42,6 @@
 					<button class="modal_image_upload btn">Upload</button>
 				</div>
 				<div class="control_image">
-					<div class="add-name">
-						<input
-							type="text"
-							class="add-name-input btn"
-							id="name"
-							placeholder="Input name"
-						/>
-					</div>
 					<div class="upload_image">
 						<input type="file" name="upload_image_data" class="upload_image_data btn" />
 					</div>
@@ -69,12 +64,6 @@
 		<script type="text/javascript" src="./assets/javascript/crop.js"></script>
 	</body>
 	<script>
-		var nameInput = document.getElementById("name");
-		let name = document.querySelector(".guest_name");
-
-		nameInput.onkeyup = function (e) {
-			console.log(e.target.value);
-			name.textContent = e.target.value;
-		};
+		
 	</script>
 </html>
