@@ -6,7 +6,6 @@ const download_button = document.querySelector(".download_button");
 const displayName = document.querySelector(".display_image_name");
 const nameInput = document.getElementById("name");
 
-
 if (recentImageDataUrl) {
 	frame.src = recentImageDataUrl;
 }
@@ -95,7 +94,11 @@ function getRoundedCanvas(sourceCanvas) {
 function download() {
 	displayName.innerHTML = `<span class="guest_name result">${nameInput.value}</span>`;
 	var avatar = document.querySelector(".display_image_avatar"); /* full page */
-	html2canvas(avatar).then(function (canvas) {
+	html2canvas(avatar, {
+		backgroundColor: null,
+		scrollX: 0,
+		scrollY: -window.scrollY,
+	}).then(function (canvas) {
 		var link = document.createElement("a");
 		container.appendChild(link);
 		link.download = "download.jpg";
