@@ -1,72 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+			rel="stylesheet"
+		/>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"
+		/>
+		<link rel="stylesheet" href="assets/css/base.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
-	<link rel="stylesheet" href="assets/css/base.css" />
-	<link rel="stylesheet" href="assets/css/style.css" />
+		<title>Toshiko</title>
+	</head>
 
-	<title>Toshiko</title>
-</head>
-
-<body>
-	<div id="app">
-		<div class="container">
-			<div class="display_image">
-				<div class="display_image_avatar">
-					<img src="" alt="Frame" class="display_image_frame" width="1200" />
-					<div class="display_image_result">
-						<!-- <img hidden src="" alt="Avatar" class="display_image_data" /> -->
+	<body>
+		<div id="app">
+			<div class="container">
+				<div class="display_image">
+					<div class="display_image_avatar">
+						<img src="" alt="Frame" class="display_image_frame" width="1200" />
+						<div class="display_image_result">
+							<!-- <img hidden src="" alt="Avatar" class="display_image_data" /> -->
+						</div>
+						<span class="guest_name"> </span>
 					</div>
-					<span class="guest_name">
-					</span>
 				</div>
-			</div>
 
-			<div class="modal_image">
-				<div class="modal_image_content"></div>
-				<button class="modal_image_upload btn">Upload</button>
-			</div>
-			<div class="control_image">
-				<div class="add-name">
-					<input type="text" class="add-name-input btn" id="name" placeholder="Input name">
+				<div class="modal_image">
+					<div class="modal_image_content"></div>
+					<button class="modal_image_upload btn">Upload</button>
 				</div>
-				<div class="upload_image">
-					<input type="file" name="upload_image_data" class="upload_image_data btn" />
-				</div>
-				<div class="download_image">
-					<button class="download_button btn">Download</button>
+				<div class="control_image">
+					<div class="add-name">
+						<input
+							type="text"
+							class="add-name-input btn"
+							id="name"
+							placeholder="Input name"
+						/>
+					</div>
+					<div class="upload_image">
+						<input type="file" name="upload_image_data" class="upload_image_data btn" />
+					</div>
+					<div class="download_image">
+						<button class="download_button btn">Download</button>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"
-		integrity="sha512-6lplKUSl86rUVprDIjiW8DuOniNX8UDoRATqZSds/7t6zCQZfaCe3e5zcGaQwxa8Kpn5RTM9Fvl3X2lLV4grPQ=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-	<script type="text/javascript" src="./assets/javascript/crop.js"></script>
-</body>
-<script>
-	var nameInput = document.getElementById('name');
-	let name = document.querySelector('.guest_name')
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"
+			integrity="sha512-6lplKUSl86rUVprDIjiW8DuOniNX8UDoRATqZSds/7t6zCQZfaCe3e5zcGaQwxa8Kpn5RTM9Fvl3X2lLV4grPQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+		<script type="text/javascript" src="./assets/javascript/crop.js"></script>
+	</body>
+	<script>
+		var nameInput = document.getElementById("name");
+		let name = document.querySelector(".guest_name");
 
-	console.log(name);
-	nameInput.onkeyup = function (e) {
-		console.log(e.target.value);
-		name.textContent = e.target.value;
-
-	}
-</script>
-
+		nameInput.onkeyup = function (e) {
+			console.log(e.target.value);
+			name.textContent = e.target.value;
+		};
+	</script>
 </html>

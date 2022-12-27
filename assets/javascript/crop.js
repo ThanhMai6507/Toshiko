@@ -1,5 +1,6 @@
+const container = document.querySelector(".container");
 const recentImageDataUrl = localStorage.getItem("recent-image");
-const frame = document.querySelector(".display_image_frame")
+const frame = document.querySelector(".display_image_frame");
 if (recentImageDataUrl) {
 	frame.src = recentImageDataUrl;
 }
@@ -86,17 +87,19 @@ function getRoundedCanvas(sourceCanvas) {
 }
 
 function download() {
-	var container = document.querySelector(".display_image_avatar"); /* full page */
-	html2canvas(container).then(function (canvas) {
+	var avatar = document.querySelector(".display_image_avatar"); /* full page */
+	html2canvas(avatar).then(function (canvas) {
+		// container.appendChild(canvas);
 		var link = document.createElement("a");
-
-		document.body.appendChild(link);
+		container.appendChild(link);
 		link.download = "download.jpg";
 		link.href = canvas.toDataURL();
 		link.target = "_blank";
 		link.click();
 		document.querySelector('a').remove();
 	});
+
 }
+
 const download_button = document.querySelector(".download_button");
 download_button.addEventListener("click", download);

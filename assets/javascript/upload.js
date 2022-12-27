@@ -1,7 +1,9 @@
 var fileInput = document.querySelector("input[type=file]");
 var uploadFile = document.querySelector(".upload");
+var cancel = document.querySelector(".cancel");
+var preview = document.querySelector(".upload_result");
+
 function previewFile() {
-	var preview = document.querySelector(".upload_result");
 	var file = fileInput.files[0];
 	var reader = new FileReader();
 
@@ -15,7 +17,18 @@ function previewFile() {
 	} else {
 		preview.src = "";
 	}
-	preview.removeAttribute("hidden");
+	preview.style.display = "block";
 	uploadFile.style.display = "none";
+	file = "";
 }
-fileInput.addEventListener("change", previewFile);
+cancel.addEventListener("click", function () {
+	preview.style.display = "none";
+	uploadFile.style.display = "block";
+	if ((fileInput.type = "file")) {
+		fileInput.value = "";
+	}
+});
+
+fileInput.addEventListener("change", function () {
+	previewFile();
+});
