@@ -103,6 +103,7 @@ function download() {
 		link.target = "_blank";
 		link.click();
 		document.querySelector("a").remove();
+		window.location.reload();
 	});
 }
 
