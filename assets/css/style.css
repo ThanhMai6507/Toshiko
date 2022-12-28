@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@700&display=swap");
-
+#app {
+	overflow: hidden;
+}
 .container {
 	display: flex;
 	justify-content: center;
@@ -7,6 +9,7 @@
 	gap: 50px;
 	align-items: center;
 	margin-top: 40px;
+	position: static;
 	
 
 }
@@ -28,7 +31,7 @@
 .display_image_avatar .guest_name {
 	text-transform: uppercase;
 	color: #fcf542;
-	font-size: 24px;
+	font-size: 2.4rem;
 	text-shadow: #fad126;
 	font-family: "Montserrat", sans-serif;
 	position: absolute;
@@ -67,12 +70,16 @@
 }
 
 .modal_image_content {
-	width: 800px;
-	height: 400px;
-	position: relative;
-	top: 50%;
+	/* position: relative; */
+	/* top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); */
+	
+}
+.modal_image_crop {
+	max-width: 800px;
+	height: 50%;
+	margin: 40px auto;
 }
 
 .cropper-view-box,
@@ -97,14 +104,9 @@
 	border: 0;
 	box-shadow: 0px 3px 3px 0 rgb(197 131 164);
 	transition: all 0.3s ease-in-out;
-	font-size: 14px;
+	font-size: 1.4rem;
 	cursor: pointer;
 }
-
-.modal_image_upload {
-	margin-top: 15% !important;
-}
-
 .upload_image_data::-webkit-file-upload-button {
 	visibility: hidden;
 }
@@ -148,12 +150,12 @@
 	border: 0;
 	box-shadow: 0px 3px 3px 0 rgb(197 131 164);
 	transition: all 0.3s ease-in-out;
-	font-size: 14px;
+	font-size: 1.4rem;
 	cursor: pointer;
 }
 
 .modal_image_upload {
-	margin-top: 15% !important;
+
 }
 
 .upload_image_data::-webkit-file-upload-button {

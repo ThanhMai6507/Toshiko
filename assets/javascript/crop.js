@@ -14,8 +14,8 @@ $("body").on("change", ".upload_image_data", function (e) {
 	var files = e.target.files;
 	$(".modal_image").css("display", "block");
 	var done = function (url) {
-		$(".modal_image_content").html("");
-		$(".modal_image_content").html(
+		$(".modal_image_crop").html("");
+		$(".modal_image_crop").html(
 			'<img name="modal_image_data" class="modal_image_data" src="' +
 				url +
 				'" alt="Uploaded Picture">',
