@@ -42,7 +42,7 @@ $("body").on("change", ".upload_image_data", function (e) {
 	var croppable = false;
 	var cropper = new Cropper(image, {
 		aspectRatio: 1,
-		viewMode: 1,
+		viewMode: 2,
 		responsive: true,
 		ready: function () {
 			croppable = true;
@@ -61,7 +61,6 @@ $("body").on("change", ".upload_image_data", function (e) {
 
 		// Crop
 		croppedCanvas = cropper.getCroppedCanvas();
-
 		// Round
 		roundedCanvas = getRoundedCanvas(croppedCanvas);
 		// Show
