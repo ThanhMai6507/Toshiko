@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@700&display=swap");
+.btn {
+	width: 100px;
+	height: 30px;
+	background: rgb(246, 167, 180);
+	color: #fff;
+	border-radius: 3px;
+	border: 0;
+	box-shadow: 0px 3px 3px 0 rgb(197 131 164);
+	transition: all 0.3s ease-in-out;
+	font-size: 14px;
+	cursor: pointer;
+}
 #app {
 	overflow: hidden;
 }
@@ -27,10 +39,11 @@
 
 .display_image_name {
 	position: absolute;
-	top: 59%;
+	top: 60%;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 100%;
+	height: 40px;
 }
 .guest_name {
 	text-transform: uppercase;
@@ -43,6 +56,7 @@
 	display: block;
 	margin: 0 auto;
 	overflow: hidden;
+	line-height: 40px;
 }
 
 .display_image_frame {
@@ -69,9 +83,13 @@
 	bottom: 0;
 	width: 100%;
 	height: 100%;
-	overflow: hidden; /* Enable scroll if needed */
+	overflow: auto; /* Enable scroll if needed */
 	background-color: #ccc;
 	display: none;
+}
+
+.button {
+	display: flex;
 }
 
 .modal_image_content {
@@ -85,14 +103,25 @@
 	/* max-width: 800px;
 	height: 50%; */
 	object-fit: contain;
-
 }
+
 .modal_image_data {
-	max-width: 400px;
+	width: 600px;
+	height: 500px;
 	display: block;
 }
 .modal_image_upload {
 	margin: 40px auto 0;
+	display: flex;
+	gap: 40px;
+
+}
+.modal_cancel_btn {
+	background: rgb(147, 223, 170);
+	/* color: #fff;
+	border-radius: 3px;
+	border: 0; */
+	box-shadow: 0px 3px 3px 0 rgb(134, 189, 158);
 
 }
 .cropper-view-box,
@@ -106,18 +135,7 @@
 	box-shadow: 0 0 0 1px #39f;
 }
 
-.btn {
-	width: 100px;
-	height: 30px;
-	background: rgb(246, 167, 180);
-	color: #fff;
-	border-radius: 3px;
-	border: 0;
-	box-shadow: 0px 3px 3px 0 rgb(197 131 164);
-	transition: all 0.3s ease-in-out;
-	font-size: 14px;
-	cursor: pointer;
-}
+
 .upload_image_data::-webkit-file-upload-button {
 	visibility: hidden;
 }
