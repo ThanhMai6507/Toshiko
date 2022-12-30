@@ -48,7 +48,7 @@
 .guest_name {
 	text-transform: uppercase;
 	color: #fcf542;
-	font-size: 2.5em !important;
+	font-size: 2.5em;
 	font-family: "Montserrat", sans-serif;
 	text-shadow: 5px 2px 4px black;
 	text-align: center;
@@ -226,4 +226,54 @@ input::placeholder {
 .add-name-input:hover {
 	background: rgb(185, 180, 216);
 	box-shadow: 0 3px 0 0 rgb(167, 150, 216);
+}
+@media only screen and (min-width: 768px) {
+	.guest_name {
+		font-size: 18px;
+		line-height: 44px;
+		margin-top: -5px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.guest_name {
+		font-size: 22px;
+		line-height: 50px;
+		margin-top: -5px;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.guest_name {
+		font-size: 28px;
+    	line-height: 64px;
+		margin-top: -8px;
+	}
+}
+@media only screen and (min-width: 1600px) {
+	.guest_name {
+		font-size: 40px;
+    	line-height: 90px;
+	}
+}
+
+@media only screen and (min-width: 2200px) {
+	.guest_name {
+		font-size: 48px;
+		margin-top: 8px;
+		line-height: 76px;
+	}
+}
+
+@media only screen and (min-width: 3000px) {
+	.guest_name {
+		font-size: 60px;
+		line-height: 80px;
+	}
+}
+
+@media only screen and (min-width: 3800px) {
+	.guest_name {
+		font-size: 70px;
+		line-height: 94px;
+	}
 }
