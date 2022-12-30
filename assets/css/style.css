@@ -48,7 +48,7 @@
 .guest_name {
 	text-transform: uppercase;
 	color: #fcf542;
-	font-size: 24px;
+	font-size: 2.5em !important;
 	font-family: "Montserrat", sans-serif;
 	text-shadow: 5px 2px 4px black;
 	text-align: center;
