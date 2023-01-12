@@ -5,6 +5,8 @@ const frame = document.querySelector(".display_image_frame");
 const download_button = document.querySelector(".download_button");
 const displayName = document.querySelector(".display_image_name");
 const nameInput = document.getElementById("name");
+const cancelButton = document.querySelector('.modal_cancel_btn')
+
 
 if (recentImageDataUrl) {
 	frame.src = recentImageDataUrl;
@@ -35,12 +37,12 @@ $("body").on("change", ".upload_image_data", function (e) {
 		}
 	}
 
-	var image = document.querySelector(".modal_image_data");
+	var modal_data = document.querySelector(".modal_image_data");
 	var modal_image = document.querySelector(".modal_image");
 	var upload_button = document.querySelector(".modal_image_upload");
 	var result = document.querySelector(".display_image_result");
 	var croppable = false;
-	var cropper = new Cropper(image, {
+	var cropper = new Cropper(modal_data, {
 		aspectRatio: 1,
 		viewMode: 2,
 		responsive: true,
@@ -49,11 +51,11 @@ $("body").on("change", ".upload_image_data", function (e) {
 		},
 	});
 
+	var croppedCanvas;
+	var roundedCanvas;
+	var roundedImage = document.createElement("img");
 	upload_button.onclick = function () {
 		modal_image.style.display = "none";
-		var croppedCanvas;
-		var roundedCanvas;
-		var roundedImage;
 
 		if (!croppable) {
 			return;
@@ -64,13 +66,15 @@ $("body").on("change", ".upload_image_data", function (e) {
 		// Round
 		roundedCanvas = getRoundedCanvas(croppedCanvas);
 		// Show
-		roundedImage = document.createElement("img");
-
 		roundedImage.src = roundedCanvas.toDataURL();
 		result.innerHTML = "";
 		result.appendChild(roundedImage);
 		roundedImage.className = "display_image_data";
 	};
+	cancelButton.addEventListener('click', () => {
+		modal_image.style.display = "none";
+		roundedImage.style.display = 'none';
+	})
 });
 
 function getRoundedCanvas(sourceCanvas) {
@@ -110,3 +114,5 @@ function download() {
 }
 
 download_button.addEventListener("click", download);
+
+
