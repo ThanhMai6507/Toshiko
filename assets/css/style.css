@@ -9,6 +9,7 @@
 	gap: 50px;
 	align-items: center;
 	margin-top: 40px;
+	min-height: 500px;
 }
 
 .display_image {

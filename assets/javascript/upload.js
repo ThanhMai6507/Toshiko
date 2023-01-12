@@ -3,6 +3,7 @@ var uploadFile = document.querySelector(".upload");
 var cancel = document.querySelector(".cancel");
 var preview = document.querySelector(".upload_result");
 
+localStorage.removeItem("recent-image");
 function previewFile() {
 	var file = fileInput.files[0];
 	var reader = new FileReader();
@@ -26,6 +27,7 @@ cancel.addEventListener("click", function () {
 	uploadFile.style.display = "block";
 	if ((fileInput.type = "file")) {
 		fileInput.value = "";
+		localStorage.removeItem("recent-image");
 	}
 });
 
